@@ -1,0 +1,338 @@
+/* Step 5: Box model fix — apply to every element on the page */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Color Palette
+# - color 1
+#3C4959
+# - color 2
+#A69581
+# - color 3
+#877C73
+# - color 4
+#59443F
+*/
+
+/* Global styles 
+------------------------------------*/
+:root { /*where all global variables are defined its the same as <html>*/
+  --color1: #3C4959;    /* header and footer*/
+  --color2: #A69581;    /* Work expeirience and Skills sections */
+  --color3: #877C73;    /*Education and Membership Organizations*/ 
+  --color4: #59443F;      /**/
+}
+
+/* css for the nav bar */
+/* Smooth in-page scrolling */
+html { scroll-behavior: smooth; }
+
+/* Sticky top navigation to keep nav bar stick to top of screen */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(60, 73, 89, 0.96);      /* uses your color 1 tone */
+  backdrop-filter: saturate(120%) blur(4px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+/* Lay out the nav links on one line and center them */
+.site-nav .content-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-block: 10px;                     /* vertical breathing room */
+  max-width: 1100px;                       /* a tiny bit wider than body content */
+}
+
+/* Links look like nav pills */
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: .2px;
+  padding: .5rem .75rem;
+  border-radius: .5rem;
+  transition: background-color .15s ease, color .15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  background-color: rgba(255, 255, 255, 0.10);
+  outline: none;
+}
+
+/* Make the last link (Download) a primary button and push it right */
+.site-nav .download-link {
+  background: #fff;
+  color: var(--color1);
+  border-radius: .5rem;
+}
+.site-nav .content-wrap a:last-child { margin-left: auto; }
+
+/* Ensure headings aren’t hidden under the sticky bar when jumping */
+section { scroll-margin-top: 80px; }
+
+/* end css for nav bar */
+
+/* Step 1b: reusable inner layout wrapper */
+.content-wrap {
+  max-width: 950px;          /* sets fixed page width for inner content */
+  margin: 0 auto;        /* centers wrapper within full-width sections */
+  padding: 50px;          /* 3a.) */
+  overflow: hidden;       /* 4f.) */
+}
+
+html, body { /* for page to fit to screen */
+    margin: 0;    /* 3d.) */
+    padding: 0;
+    width: 100%;
+    /* height: 100%; */
+}
+
+/* Header & Footer */
+header, footer {
+  background-color: var(--color1);
+  color: #fff;
+  padding: 20px;
+}
+
+footer { 
+  text-align: center;   /* 3e.) */
+}
+
+/* Step 6: Reusable columns */
+/* 
+.column-narrow and .column-wide create a two-column layout.
+.column-narrow is used for smaller content (like the photo or job details),
+and .column-wide is used for the main text beside it. 
+They use float and width percentages to sit side-by-side on the same row. 
+*/
+
+.column-narrow {
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;     /* 6d */
+}
+
+.column-wide {
+  width: 70%;
+  float: left;
+  min-height: 225px;     /* 6e */
+}
+
+/* step 4 Header headshot layout */
+.profile-img {
+  height: auto;        /* keep aspect ratio */
+  border-radius: 50%; /* 4c: make the photo circular */
+  object-fit: cover;   /* if the source isn’t perfectly square, keeps face centered */
+  display: block;      /* removes any stray inline gap */
+}
+
+/* step 6 make profile image responsive inside the narrow column */
+.column-narrow .profile-img {
+  width: 100%;       /* fills the 30% column width */
+  max-width: 300px;  /* ensures it never exceeds 300px, per project specs */
+}
+
+/* Work Experience */
+main section:nth-of-type(1) {
+  background-color: var(--color2); /* lighter tone from your palette */
+  color: #000;
+  padding: 20px;
+}
+
+/* Education */
+main section:nth-of-type(2) {
+  background-color: var(--color3); /* medium tone from your palette */
+  color: #000;
+  padding: 20px;
+}
+
+/* Projects */
+main section:nth-of-type(3) {
+  background-color: var(--color1); /* darkest tone from your palette */
+  color: #fff;
+  padding: 20px;
+}
+
+/* Project galleries */
+.project-subtitle {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2-up grid */
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+/* Add even spacing between all project sections */
+.project-block {
+  margin-bottom: 5rem;   /* space below each project block */
+}
+
+/* Optional: add some space above project titles */
+.project-block h3 {
+  margin-top: 2rem;
+}
+
+/* Add spacing below images or galleries too */
+.project-block img,
+.project-gallery {
+  margin-bottom: 2rem;
+}
+
+/* One featured image (SurfHQ map) fills the width */
+.project-gallery.one-up {
+  grid-template-columns: 1fr;
+  max-width: 450px; 
+  margin: 0 auto;
+}
+
+.project-gallery figure {
+  margin: 0;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.project-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Optional: keep images nicely framed if some are taller/wider */
+.project-gallery img {
+  object-fit: cover;
+}
+
+/* Captions */
+.project-gallery figcaption {
+  font-size: 0.95rem;
+  padding: 0.6rem 0.8rem;
+  opacity: 0.9;
+}
+
+/* Responsive: 1 column on small screens */
+@media (max-width: 700px) {
+  .project-gallery { grid-template-columns: 1fr; }
+}
+
+/* Skills */
+main section:nth-of-type(4) {
+  background-color: var(--color2);
+  color: #000;
+  padding: 20px;
+}
+
+/* Membership Organizations */
+main section:nth-of-type(5) {
+  background-color: var(--color3);
+  color: #000;
+  padding: 20px;
+}
+
+li {
+   line-height: 2; /* the spacing in between lines */
+}
+
+/* for the first font by default for the whole page */
+body{
+    font-family: "DM Sans", sans-serif;
+    font-weight: 500; 
+    font-style: normal;
+}
+
+/* just for h1-h3 we use this font */
+h1, h2, h3 {
+    font-family: "DM Serif Text", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+header h1, header h2 {
+  margin: 0;  /* step 4d.) */ 
+}
+
+h1 { 
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;    /* 3b, 3c */
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* font styles the code on google fonts I was told to paste in */
+
+.dm-serif-text-regular {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.dm-serif-text-regular-italic {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.dm-sans-text-regular {
+  font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Step 3f–g */
+.contact-info a {
+  padding: 10px;         /* adds space around each link */
+  display: inline-block; /* keeps links in a row but allows padding to take effect */
+}
+
+/* Footer link styling */
+.contact-links a {
+  color: #bedcf1;              /* light blue */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ffffff;              /* turns white on hover */
+  text-decoration: underline;
+}
+
+.contact-links i {
+  color: #bedcf1; /* light blue matches your footer theme */
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* Leadership section with background image and gradient */
+#leadership.leadership-section {
+  background:
+    linear-gradient(
+      rgba(60, 73, 89, 0.85),   /* darker blue overlay */
+      rgba(60, 73, 89, 0.85)
+    ),
+    url("../images/Leadership_background.jpg") center / cover no-repeat;
+
+  color: #fff;                /* keep text readable */
+  padding: 4rem 0;            /* match other section spacing */
+  min-height: 400px;          /* ensures image shows even if short */
+  background-attachment: fixed; /* anchored feel */
+}
+
