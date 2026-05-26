@@ -58,10 +58,10 @@
             </div>
             <div class="column-wide"> <!-- hw7 step 6c.)-->
               <h1>Spencer Levine</h1>
-              <h2>Computer Science Student | Machine Learning & Software Engineering</h2>
-              <p>I’m a senior Computer Science major at California State University, Northridge with experience in Machine Learning and Full-Stack Development.</p>
-              <p>I’ve led a development team during my internship at DS Systems and built multiple web applications using Spring Boot, Bootstrap, XGBoost, Scikit-learn, Python, SQL, HTML, CSS, and JavaScript.</p> 
-              <p>I’m passionate about designing intelligent systems and am currently preparing to begin my Master’s in Computer Science starting Fall 2026.</p>
+              <h2>Computer Science Graduate | University of Southern California M.S. in Computer Science, Artificial Intelligence Student | AI/ML & Software Engineering</h2>
+              <p>I’m a Computer Science graduate from California State University, Northridge and an M.S. Computer Science, Artificial Intelligence student at the University of Southern California.</p>
+              <p>My work focuses on machine learning, AI evaluation, full stack development, and reliable software systems. I’ve led a 7 person team building a healthcare fraud detection prototype, evaluated AI reporting quality at ClearVerse AI, and built AI powered projects including Storm44, a study platform that turns videos and documents into flashcards, quizzes, and AI tutor responses.</p> 
+              <p>Across internships, research, and projects, I’ve learned how to connect technical implementation with real user impact. I’m especially interested in building trustworthy AI systems, scalable software products, and tools that help people learn, work, and make better decisions.</p>
             </div>
           </div>
       </header>
@@ -91,9 +91,20 @@
             </div>
 
             <div class="column-narrow" style="margin-top: 40px;">
+              <h3>AI Model Quality & Evaluation Fellow</h3>
+              <p><strong>ClearVerse AI</strong></p>
+              <p><strong>March 2026 - June 2026</strong></p>
+            </div>
+            <div class="column-wide" style="margin-top: 40px;">
+              <p>Evaluated AI model quality and evidence reporting behavior to improve the reliability of reports shown to users, identifying alignment gaps in system outputs, evidence, and frontend/backend validation logic.</p> 
+              <p>Reproduced and prototyped AI system issues, analyzed AI reasoning vs pattern matching, created edge case scenarios, and failure mode taxonomies that helped the company better understand product risks, reproduce AI reporting issues, and prioritize implementation fixes.</p>
+              <p>Led weekly company wide presentations to leadership, translating AI evaluation findings into engineering ready recommendations for regression testing, validation logic, UI truthfulness, reporting accuracy, and user trust.</p>
+            </div>
+
+            <div class="column-narrow" style="margin-top: 40px;">
               <h3>Undergraduate Research Assistant - Compilers & Programming Languages</h3>
               <p><strong>California State University, Northridge – with Professor Kyle Dewey</strong></p>
-              <p><strong>November 2025 - Present</strong></p>
+              <p><strong>November 2025 - May 2026</strong></p>
             </div>
             <div class="column-wide" style="margin-top: 40px;">
               <p>Researching programming languages, compilers, automated testing, and software reliability under the supervision of Professor Kyle Dewey.</p>
@@ -126,19 +137,32 @@
             <h2>Education</h2>
 
             <!-- School details -->
-            <h3>California State University, Northridge, August 2023 - May 2026</h3>
-            <p><strong>Bachelor of Science in Computer Science</strong></p>
-            <p>Coursework: Artificial Intelligence, Machine Learning, Data Mining, Web Engineering, Database Design, 
-               Software Engineering, Cybersecurity, Algorithm Design, Language Design and Compilers, Operating Systems, Advanced Data Structures, Automata, Programming Language Concepts,
-               Calculus, Linear Algebra, Statistics and Probability.</p>
 
-            <h3>Los Angeles Pierce College, August 2021 - June 2023</h3>
-            <p><strong>Associate of Arts and Sciences Degree in Computer Science</strong></p>
-            <p>I earned my general education degree. Classes towards my degree included: Intro to C++, Assembly and Architecture, and OOP.</p>
-            
-            <h3>Summary</h3>
-            <p>Throughout my academic career, I’ve built a strong foundation in algorithms, data structures, and software design principles.</p>
-            <p>My coursework and projects have strengthened my problem-solving abilities and deepened my interest in artificial intelligence and data-driven software systems.</p>
+            <div class="education-block">
+              <h3>University of Southern California | Aug 2026 – May 2028</h3>
+              <p><strong>M.S. Computer Science, Artificial Intelligence</strong></p>
+              <p>Coursework: Artificial Intelligence, Machine Learning, Deep Learning, Robotics, Natural Language Processing, Analysis of Algorithms, Web Technologies</p>
+            </div>
+
+            <div class="education-block">
+              <h3>California State University, Northridge | August 2023 - May 2026</h3>
+              <p><strong>B.S. in Computer Science</strong></p>
+              <p>Coursework: Artificial Intelligence, Machine Learning, Data Mining, Web Engineering, Database Design,
+                 Software Engineering, Cybersecurity, Algorithm Design, Language Design and Compilers, Operating Systems, Advanced Data Structures, Automata, Programming Language Concepts,
+                 Calculus, Linear Algebra, Statistics and Probability.</p>
+            </div>
+
+            <div class="education-block">
+              <h3>Los Angeles Pierce College, August 2021 - June 2023</h3>
+              <p><strong>A.A. and Sciences Degree in Computer Science</strong></p>
+              <p>I earned my general education degree. Classes towards my degree included: Intro to C++, Assembly and Architecture, and OOP.</p>
+            </div>
+
+            <div class="education-block">
+              <h3>Summary</h3>
+              <p>Throughout my academic career, I’ve built a strong foundation in algorithms, data structures, and software design principles.</p>
+              <p>My coursework and projects have strengthened my problem-solving abilities and deepened my interest in artificial intelligence and data-driven software systems.</p>
+            </div>
 
             <!-- End of school details -->
           </div>
@@ -152,22 +176,36 @@
           <!-- Smart Energy Management Project -->
           <div class="project-block">
             <h3>Smart Energy Management - Deep Reinforcement Learning HVAC Optimization</h3>
-            <p>Developed a deep reinforcement learning system to optimize HVAC energy usage in a simulated commercial building environment.</p>
-            <p>The system used PPO/DQN reinforcement learning agents to learn optimal control policies, targeting a 10–20% reduction in energy cost compared to rule-based baseline control.</p>
+            <p>Built a custom OpenAI Gym HVAC simulation environment modeling indoor temperature, outdoor temperature, time of day, occupancy, and electricity price to study energy cost and comfort tradeoffs in commercial buildings.</p>
+            <p>Trained and evaluated a PPO controller using Stable-Baselines3 against a rule based baseline across fixed seed evaluation episodes, reducing simulated energy cost while analyzing comfort violations, reward stability, and deployment tradeoffs.</p>
             <p>Technologies: Python, PyTorch, Stable-Baselines3, OpenAI Gym, TensorBoard</p>
+            <div class="project-video">
+              <iframe
+                src="https://www.youtube.com/embed/dTxWf3jb3oE"
+                title="Smart Energy Management Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <p class="video-caption">Smart Energy Management demo showing the reinforcement learning HVAC simulation and evaluation results.</p>
+            </div>
           </div>
 
+          <!-- Storm44 Project -->
           <div class="project-block">
-            <h3>Storm44 - AI Powered Study Tool (Capstone)</h3>
+            <h3>Storm44 - AI Powered Study Tool</h3>
             <p> Developed an AI platform that converts YouTube videos, PDFs, and notes into flashcards, quizzes, and games to help students study more efficiently using a cloud-hosted RAG pipeline and PostgreSQL
                 Integrated an AI tutor pipeline for personalized study assistance, supporting content ingestion, transformation, and interactive feedback
             </p>
-            <div class="project-gallery one-up">
-              <figure>
-                <img src="images/Storm44_UI.png" alt="Storm44 homepage" loading="lazy">
-                <figcaption>Storm44 Homepage</figcaption>
-              </figure>
-            </div>
+            <p>Technologies: Python, FastAPI, Sentence-Transformers, Cross-Encoder re-ranking, PostgreSQL, faster-whisper, yt-dlp, Vite, React / HTML / CSS, Bootstrap, REST APIs, PyMuPDF</p>
+            <div class="project-video">
+              <iframe
+                src="https://www.youtube.com/embed/VQevPhmdzSE"
+                title="Storm44 Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <p class="video-caption">Storm44 demo showing PDF/YouTube ingestion, AI generated study tools, and the AI tutor workflow.</p>
+            </div>         
           </div>
 
           <!-- Instacart Data Mining Project -->
@@ -192,12 +230,23 @@
 
           <!-- Desktop Database Application -->
           <div class="project-block">
-            <h3>Desktop Database Application - JavaFX & MySQL</h3>
+            <h3>Desktop Database Application - Rental Unit</h3>
             <p>Developing a desktop application with a graphical user interface to manage structured data using a relational database.</p>
+            <p>The application is a rental unit service application.</p>
             <p>The application connects a JavaFX front-end to a MySQL database using JDBC for performing CRUD operations and managing relational data.</p>
             <p>Technologies: Java, JavaFX, MySQL Server, MySQL Workbench, JDBC MySQL Connector</p>
+            <div class="project-video">
+              <iframe
+                src="https://www.youtube.com/embed/DQhj2wtvF8k"
+                title="Database Rental Unit Application Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+              </iframe>
+              <p class="video-caption">Database Rental Unit Application demo showing the user interface and core functionality.</p>
+            </div>
           </div>
 
+          <!-- E-Commerce Platform Project -->
           <div class="project-block">
             <h3>E-Commerce Platform - Gaming Computer Parts</h3>
             <p>Created an online store that sells  computer parts.</p>
